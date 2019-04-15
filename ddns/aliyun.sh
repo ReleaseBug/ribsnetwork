@@ -1,5 +1,13 @@
 #!/bin/sh
 
+#方法一：curl -s "http://checkip.dyndns.org/"|cut -f 6 -d" "|cut -f 1 -d"<"    www.2cto.com       
+#方法二：w3m -dump http://submit.apnic.net/templates/yourip.html | grep -P -o '(\d+\.){3}\d+' 
+#方法三：curl ifconfig.me          
+ 
+#方法四：curl icanhazip.com 
+#方法五：curl -s www.123cha.com | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}" | head -n 1
+
+
 set -e
 
 if [ $1 ]; then
