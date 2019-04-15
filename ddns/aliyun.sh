@@ -124,7 +124,8 @@ addRecord() {
 
 # Get new IP address
 echo "获取当前 IP..."
-NewIP=$(wget -qO- --no-check-certificate "http://members.3322.org/dyndns/getip")
+#NewIP=$(wget -qO- --no-check-certificate "http://members.3322.org/dyndns/getip")
+NewIP=$(curl -s www.123cha.com | grep -o "[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}\.[0-9]\{1,3\}" | head -n 1)
 echo "当前 IP 为 $NewIP."
 
 # Get record ID of sub domain
